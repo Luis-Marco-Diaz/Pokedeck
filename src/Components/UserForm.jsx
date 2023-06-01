@@ -1,51 +1,62 @@
-import { useForm } from 'react-hook-form';
-import { useEffect } from 'react';
 
-function UserForm( {addUser, editUser} ) {
-  
-  const { register, handleSubmit, reset } = useForm();
-  const submit = data => {
-		console.log(data)
-    reset(defaultValues); 
+import { useForm }from 'react-hook-form'
+
+function UserForm({ addUser }) {
+
+    const { register, handleSubmit } = useForm()
+
+    const submit = data => {
+        addUser( data )
+        console.log(data())
     }
-  const defaultValues = {email: "", password: ""}
 
-  return (
-    <div>
-      <div className="modal-body">
-        <h5>Popover in a modal</h5>
-         <form onSubmit={handleSubmit(submit)}>
-          <div>
-            <label htmlFor="name">Nombre</label>
-              <input 
-              type="text" 
-              id="name" 
-                { ...register( "name" ) }
+    return (
+        <form onSubmit={ handleSubmit( submit ) } >
+            <h2>New User</h2>
+            <div className="input-wrapper">
+                <label htmlFor="name">First Name</label>
+                <input 
+                type="text" 
+                id="first_name" 
+                { ...register( "first_name" ) }
                 />
-          </div>
-          <div>
-						<label htmlFor='email-input'>Email</label>
-						<input 
-            type='email' 
-            id='email-input' {...register("email")} 
-            />
-				  </div>
-			  	<div>
-						<label htmlFor='password-input'>Password</label>
-						<input 
-            type='password' 
-            id='password-input' {...register("password")}
-            />
-				  </div>
+            </div>
+            <div className="input-wrapper">
+                <label htmlFor="LastName">Last Name</label>
+                <input 
+                type="text" 
+                id="last_name" 
+                { ...register( "last_name" ) }
+                />
+            </div>
+            <div className="input-wrapper">
+                <label htmlFor="email">Email</label>
+                <input 
+                type="email" 
+                id="email" 
+                { ...register( "email" ) }
+                />
+            </div>
+            <div className="input-wrapper">
+                <label htmlFor="password">Password</label>
+                <input 
+                type="password" 
+                id="password" 
+                { ...register( "password" ) }
+                />
+            </div>
+            <div className="input-wrapper">
+                <label htmlFor="birthday">Birthday</label>
+                <input 
+                type="date" 
+                id="birthday" 
+                { ...register( "birthday" ) }
+                />
+            </div>
 
-		     </form>
-          <p>This <a href="#" role="button" className="btn btn-secondary popover-test" title="Popover title" data-content="Popover body content is set in this attribute.">button</a> triggers a popover on click.</p>
-          <hr/>
-      <h5>Tooltips in a modal</h5>
-    <p><a href="#" className="tooltip-test" title="Tooltip">This link</a> and <a href="#" className="tooltip-test" title="Tooltip">that link</a> have tooltips on hover.</p>
-</div>
-    </div>
-  )
+            <button type="submit"> Create new user </button>
+        </form>
+    );
 }
 
 export default UserForm;
