@@ -3,8 +3,47 @@
   padding: 2px;
   box-sizing: border-box;
 }
+/* ============ VARIABLES CSS ============= */
+:root {
+   /* Tipografía */
+   --body-font: 'Prompt','Sen', system-ui, -apple-system, BlinkMacSystemFont, 'Open Sans', 'Helvetica Neue';
+   --big-font-size: 26px;
+   --normal-font-size: 20px;
+   --small-font-size: 16px;
+   --smaller-font-size: 12px;
+}
+input[type="text"] {
+  width: 40%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  background-color: #b10707;
+  color: #ffffff;
+  font-size: var(--big-font-size);
+  border-radius: 10px;
+  text-align: center;
+}
 
-body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+.Home {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: url("/public/BackgroundPokemon.png");
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.Home-info {
+  font-family: var(--body-font);
+  font-size: var(--big-font-size);
+  -webkit-text-stroke: 2px #efef07;
+  text-shadow: 5px 5px 10px black;
+  line-height: 170%;
 }

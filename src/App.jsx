@@ -1,31 +1,20 @@
 import './App.css';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
-import UserForm from './Components/UserForm';
-import UsersList from './Components/UsersList';
+import { HashRouter, Routes,Route } from 'react-router-dom'
+import Home from './Pages/Home';
+
+// Colocar aquí la lógica para tomar el nombre del Entrenador Pokemon
+// Hacer una animación con CSS de Pokemones caminando en el pasto de fondo
+// Colocar un brake para que en dispositivos móviles el background cambie
+// ¿Se puede poner un background en movimiento?
+
 
 function App() {
-  
-  const [ usersList, setUserList ] = useState( [] );
-
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = () => {
-    axios
-      .get("https://users-crud.academlo.tech/users/3328/")
-      .then((resp) => setUserList(resp.data)) 
-      .catch((error) => console.error(error));
-  };
- 
   return (
-    <div className="App">
-     <h1>Users CRUD</h1>
-     <UsersList 
-      userList = {usersList}
-      />
-    </div>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} />
+      </Routes>
+    </HashRouter>
   );
 }
 
