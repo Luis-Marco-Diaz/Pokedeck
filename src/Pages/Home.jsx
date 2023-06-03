@@ -1,6 +1,6 @@
+import { useState } from 'react'
 import { useSelector , useDispatch } from 'react-redux';
-import { setname, setValue } from './slices/usersSlice.slice';
-
+import { setname, setValue } from '../store/slices/usersSlice.slice';
 // Colocar aquí la lógica para tomar el nombre del Entrenador Pokemon
 
 const Home = () => {
@@ -11,6 +11,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const setusername = () => dispatch(setname())
 
+  const [ value, setValue ] = useState()
+
     return (
         <div className='Home'>
           <div className='Home-info'>
@@ -19,7 +21,10 @@ const Home = () => {
             <br/>
           </div>
           {/* Aquí va la acción del usuario que dispara el dispatch*/}
-          <input type="text" onClick ={setusername}/>
+          <form action="">
+          <input value={ value } type="text" />
+          <input type="submit" onChange={ (e) => setValue( e.target.value ) } />
+          </form>
         </div>
     );
 };
