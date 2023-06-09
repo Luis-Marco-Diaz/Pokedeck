@@ -6,8 +6,8 @@ export const usersSlice = createSlice({
     reducers: {
       // Acciones que van a modificar el estado, podemos tener diferentes funciones = Acciones
       // Aquí va a recibir el valor del input del Home
-          setname: state => {
-            return state +1;
+          setname: (state , action) => {
+            return action.payload
             },
       /*
         actionName : currentValueState => {
@@ -20,18 +20,10 @@ export const usersSlice = createSlice({
             }else{
                 return 0
             }
-      */
-          decrement: state => {
-              return state - 1;
-              },
-        
-          setValue: (state, action) => { // Recibimos la accion por parámetros
-                return action.payload // Colocamos la propiedad payload
-              },
-          
+      */  
     }
 })
 
-export const { setname, decrement, setValue } = usersSlice.actions;
+export const { setname } = usersSlice.actions;
 
 export default usersSlice.reducer;

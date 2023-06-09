@@ -1,18 +1,14 @@
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector , useDispatch } from 'react-redux';
-import { setname, setValue } from '../store/slices/usersSlice.slice';
+import { setname } from '../store/slices/usersSlice.slice';
 // Colocar aquí la lógica para tomar el nombre del Entrenador Pokemon
-// Uno más
 
 const Home = () => {
 
   const user = useSelector(state => state.user )
-  useSelector(state=> console.log(state))
-
-  const dispatch = useDispatch();
-  const setusername = () => dispatch(setname())
-
-  const [ value, setValue ] = useState()
+  const dispatch = useDispatch()
+  const [ nameValue, setNameValue ] = useState( "" )
 
     return (
         <div className='Home'>
@@ -21,11 +17,17 @@ const Home = () => {
             <h2>Escribe tu nombre para continuar...</h2>
             <br/>
           </div>
-          {/* Aquí va la acción del usuario que dispara el dispatch*/}
-          <form action="">
-          <input value={ value } type="text" />
-          <input type="submit" onChange={ (e) => setValue( e.target.value ) } />
-          </form>
+          <input 
+          type="text" 
+          id="name"
+          value={ nameValue }
+          onChange= { e => setNameValue(e.target.value) }
+          />
+          <button onClick={ () => dispatch( setname(nameValue) ) }>Entrar</button>
+          <br />
+          <div>
+          <Link to="/pokedex">Ir al listado de Pokemones</Link>
+          </div>
         </div>
     );
 };
