@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div className='Home'>
           <div className='Home-info'>
-            <h1>¡ Bienvenido {user} !</h1>
+            <h1>¡Bienvenido {user} !</h1>
             <h2>Escribe tu nombre para continuar...</h2>
             <br/>
           </div>
