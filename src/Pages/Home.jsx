@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useSelector , useDispatch } from 'react-redux';
 import { setname, setValue } from '../store/slices/usersSlice.slice';
 // Colocar aquí la lógica para tomar el nombre del Entrenador Pokemon
+// Uno más
 
 const Home = () => {
 
