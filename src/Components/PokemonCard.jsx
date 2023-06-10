@@ -26,13 +26,14 @@ const PokemonCard = ({ url }) => {
     return (
         <Link to={`/Pokedex/${data.id}`}>
             <div className={`pokemon-card`}>
-                <div className="card-divison">
-                    <div className="card-central">
+                <div>
+                    <div className="card_img" >
                         <img src={data.sprites?.front_default} alt="" />
                     </div>
                 </div>
-                <section className="card-information">
+                <section >
                     <h1>{data.name}</h1>
+                    <h2>Pokemon Card</h2>
                 </section>
             </div>
         </Link>

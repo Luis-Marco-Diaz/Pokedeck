@@ -1,3 +1,4 @@
+import '../App.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import PokemonCard from '../Components/PokemonCard';
@@ -21,9 +22,11 @@ const Pokedex = () => {
     }
   
   return(
-    <div className="view" >
-      <h1>Pokedex</h1>
-      <div className="container" >
+    <div className="Pokedex_list" >
+      <br />
+      <br />
+      <h1 className='Pokedex_title'> Entrenador, Bienvenido a tu Pokedex </h1>
+      <div className="container_card" >
                  {
                     pokemonsList.map( pokemon => (
                         <PokemonCard 

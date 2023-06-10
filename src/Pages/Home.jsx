@@ -23,7 +23,7 @@ const Home = () => {
           value={ nameValue }
           onChange= { e => setNameValue(e.target.value) }
           />
-          <button onClick={ () => dispatch( setname(nameValue) ) }>Entrar</button>
+          <button className='button' onClick={ () => dispatch( setname(nameValue) ) }>Entrar</button>
           <br />
           <div>
           <Link to="/pokedex">Ir al listado de Pokemones</Link>
