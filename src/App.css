@@ -78,12 +78,21 @@ input[type="text"] {
   text-shadow: 5px 5px 10px black;
   line-height: 170%;
 }
-
+.Link {
+  text-decoration: none;
+  font-family: var(--body-font);
+  font-size: var(--big-font-size);
+  line-height: 170%;
+  text-shadow: 5px 5px 10px black;
+  color: white;
+}
 /* ========== NAV BAR ============== */
 
 .navbar {
-  box-sizing: border-box;
-  background-color: rgb(1, 0, 50);
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(0, 9, 50);
   top: 0;
   left: 0;
   right: 0;
@@ -91,8 +100,16 @@ input[type="text"] {
   padding: 5px;
   color: white;
   font-size: 20px;
+  box-shadow: 3px 2px 5px black;
 }
-
+.navbar_logo {
+  width: 150px;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.navbar_logo:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
 
 /* ========== POKEDEX LIST ============== */
 a{

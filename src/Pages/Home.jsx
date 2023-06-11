@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useSelector , useDispatch } from 'react-redux';
 import { setname } from '../store/slices/usersSlice.slice';
-// Colocar aquí la lógica para tomar el nombre del Entrenador Pokemon
+
 
 const Home = () => {
 
@@ -23,10 +23,15 @@ const Home = () => {
           value={ nameValue }
           onChange= { e => setNameValue(e.target.value) }
           />
-          <button className='button' onClick={ () => dispatch( setname(nameValue) ) }>Entrar</button>
+          <button 
+          className='button' 
+          onClick={ () => dispatch( setname(nameValue) ) } 
+          >
+          Entrar
+          </button>
           <br />
           <div>
-          <Link to="/pokedex">Ir al listado de Pokemones</Link>
+          <Link className='Link' to="/pokedex">Ir al listado de Pokemones</Link>
           </div>
         </div>
     );

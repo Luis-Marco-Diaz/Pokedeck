@@ -6,7 +6,7 @@ const PokemonDetail = () => {
   
   const [ data, setData ] = useState({})
   const { id } = useParams()
-
+  
   useEffect(() => {
 
     axios

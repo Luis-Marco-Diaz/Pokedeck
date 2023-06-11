@@ -1,11 +1,9 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
 
 const NavBar = () => {
-
   return (
     <div>
-     Welcome!
+     <img className='navbar_logo' src="../PokemonLogo.png" alt="Pokemon Logo" />
     </div>
   )
 }
