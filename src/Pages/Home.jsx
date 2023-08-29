@@ -1,9 +1,13 @@
-import { Link } from 'react-router-dom'
+import {HashRouter, Routes, Route, useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react'
 import { useSelector , useDispatch } from 'react-redux';
 import { setname } from '../store/slices/usersSlice.slice';
+import Pokedex from './Pages/Pokedex';
 
-
+const navigate = useNavigate();
+const navigateToPokedex = () => {
+    navigate('/pokedex');
+  };
 const Home = () => {
 
   const user = useSelector(state => state.user )
@@ -26,7 +30,8 @@ const Home = () => {
           <button 
           className='button' 
           onClick={ () => dispatch( setname(nameValue) ) } 
-          >
+          onClick={navigateToPokedex}
+            >
           Entrar
           </button>
           <br />
